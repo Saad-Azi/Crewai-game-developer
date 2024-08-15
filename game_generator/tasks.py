@@ -2,7 +2,7 @@ from textwrap import dedent
 from crewai import Task
 
 class GameTasks():
-    def code_generator(self,agent,instructions):
+    def generate_game_code_task(self,agent,instructions):
         return Task(
             description=dedent(
                 f"""\
@@ -16,7 +16,7 @@ class GameTasks():
             agent=agent
         )
     
-    def code_reviewer(self,agent,instructions):
+    def review_game_code_task(self,agent,instructions):
         return Task(
             description=dedent(
                 f"""\
@@ -29,7 +29,7 @@ class GameTasks():
             agent=agent
         )
     
-    def final_reviewr(self,agent,instructions):
+    def finalize_game_code_review_task(self,agent,instructions):
         return Task(
             description=dedent(
                 f"""\
@@ -42,7 +42,7 @@ class GameTasks():
             agent=agent,
             output_file="./game.py"
         )
-    def general_task(self,agent,instructions):
+    def handle_general_query_task(self,agent,instructions):
         return Task(
             description=dedent(
                 f"""\

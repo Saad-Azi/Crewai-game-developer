@@ -16,15 +16,15 @@ print("The crew is starting.")
 print("----------------------------------")
 instructions=input("Enter your desired game's description: ")
 
-senior_software_engineer=agnets.senior_software_engineer()
-qa_engineer=agnets.qa_engineer()
-senior_qa_engineer=agnets.senior_qa_engineer()
-normal_agent=agnets.normal_agent()
+senior_software_engineer=agnets.create_senior_software_engineer_agent()
+qa_engineer=agnets.create_qa_engineer_agent()
+senior_qa_engineer=agnets.create_senior_qa_engineer_agent()
+normal_agent=agnets.create_general_inquiry_agent()
 
-code_generator=tasks.code_generator(agent=senior_software_engineer,instructions=instructions)
-code_reviewer=tasks.code_reviewer(agent=qa_engineer,instructions=instructions)
-final_reviewr=tasks.final_reviewr(agent=senior_qa_engineer,instructions=instructions)
-general_task=tasks.general_task(agent=normal_agent,instructions=instructions)
+code_generator=tasks.generate_game_code_task(agent=senior_software_engineer,instructions=instructions)
+code_reviewer=tasks.review_game_code_task(agent=qa_engineer,instructions=instructions)
+final_reviewr=tasks.finalize_game_code_review_task(agent=senior_qa_engineer,instructions=instructions)
+general_task=tasks.handle_general_query_task(agent=normal_agent,instructions=instructions)
 
 if "game" in instructions.lower() or "develop" in instructions.lower():
     game_crew=Crew(

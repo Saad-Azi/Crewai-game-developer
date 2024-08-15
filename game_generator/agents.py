@@ -7,7 +7,7 @@ load_dotenv()
 llm=ChatOpenAI(model="gpt-4o-mini")
 
 class GameAgents():
-    def senior_software_engineer(self):
+    def create_senior_software_engineer_agent(self):
         return Agent(
             role="A senior software engineer.",
             goal="Hired to develop software solutions to fullfill customer's requirements.",
@@ -21,7 +21,7 @@ class GameAgents():
             allow_delegation=False,
             verbose=True
         )
-    def qa_engineer(self):
+    def create_qa_engineer_agent(self):
         return Agent(
             role="Software Quality Assurance Engineer.",
             goal="Hired to find and fix the errors in the code provided to you.",
@@ -33,7 +33,7 @@ class GameAgents():
             allow_delegation=False,
             verbose=True
         )
-    def senior_qa_engineer(self):
+    def create_senior_qa_engineer_agent(self):
         return Agent(
             role="Senior Software Quality Assurance Engineer.",
             goal="You are here to make sure the code is actually delivering what is required to deliver.",
@@ -45,7 +45,7 @@ class GameAgents():
             allow_delegation=False,
             verbose=True
         )
-    def normal_agent(self):
+    def create_general_inquiry_agent(self):
         return Agent(
             role="General Inquiry Agent.",
             goal="To provide answers and assistance on a wide range of topics not related to game development.",
