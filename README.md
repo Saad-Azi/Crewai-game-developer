@@ -62,7 +62,8 @@ This project leverages CrewAI and LangChain to handle both game development task
 ### Game Development
 
 
-- The script will process the game development request using the specialized game development agents and print the final game code.Use 'game' or 'develop' keyword in your prompt to execute the agents responsible for development.
+- The script will process the game development request using the specialized game development agents and print the final game code.
+- Use 'game' or 'develop' keyword in your prompt to execute the agents responsible for development.
 
 ### General Query
 
